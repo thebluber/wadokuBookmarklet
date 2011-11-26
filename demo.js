@@ -72,8 +72,8 @@ var writeTres = (function (results) {
     li.innerHTML = "" + r;
     ul.appendChild(li);
     });}
+  alert(ul.style.position)
   return ul;
   });
 
 window.onload = startWdk(displayWdk);
-if(document.getElementById("wadokutres").style.position == "fixed") alert("sheint richtig zu sein?");
