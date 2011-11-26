@@ -3,7 +3,6 @@ alert("hallooooo");
 var makeWdkBox = (function (){
   var ul = document.createElement("ul");
   ul.id = "wadokutres";
-  ul.addClass("tres");
   ul.style = "z-index='1000' important; position='fixed' !important;";
   ul.innerHTML = "Wort markieren und suchen!";
   document.body.appendChild(ul);
