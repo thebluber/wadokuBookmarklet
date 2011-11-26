@@ -76,3 +76,4 @@ var writeTres = (function (results) {
   });
 
 window.onload = startWdk(displayWdk);
+if(document.getElementById("wadokutres").style.position == "fixed") alert("sheint richtig zu sein?");
