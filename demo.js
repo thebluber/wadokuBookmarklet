@@ -2,9 +2,8 @@
 alert("hallooooo");
 var makeWdkBox = (function (){
   var ul = document.createElement("ul");
-  ul.id = "wadokutres";
-  ul.style = "z-index='1000' important; position='fixed' !important;";
   ul.innerHTML = "Wort markieren und suchen!";
+  ul.id = "wadokutres";
   document.body.appendChild(ul);
 });
 
@@ -47,6 +46,7 @@ var displayWdk = (function () {
 
 //handle event
 var startWdk = (function(e){
+  makeWdkBox();
   var b = document.body;
   b.onclick = e;
   if (b.captureEvents) b.captureEvents(Event.CLICK);
@@ -67,9 +67,4 @@ var writeTres = (function (results) {
   return ul;
   });
 
-window.onload = makeWdkBox();
-if (document.getElementById("wadokutres")) {
-  startWdk(displayWdk);
-} else {
-  alert("irgendwie nicht loaded");
-};
+window.onload = startWdk(displayWdk);
