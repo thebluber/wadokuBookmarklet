@@ -68,6 +68,7 @@ var writeTres = (function (results) {
   return ul;
   });
 
+window.onload = makeWdkBox();
 if (document.getElementById("wadokutres")) {
   startWdk(displayWdk);
 } else {
