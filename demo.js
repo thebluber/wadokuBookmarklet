@@ -1,6 +1,16 @@
 //create a box
 alert("hallooooo");
+var load_css = (function (){
+  var css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = "file:///home/jiayi/programme/jquery/wadokuBookmarklet/demo.css";
+    css.type = "text/css";
+    document.getElementsByTagName("head")[0].appendChild(css);
+    alert("load css");
+});
+
 var makeWdkBox = (function (){
+  load_css();
   var ul = document.createElement("ul");
   ul.innerHTML = "Wort markieren und suchen!";
   ul.id = "wadokutres";

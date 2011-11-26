@@ -1,5 +1,4 @@
  ul#wadokutres, ul.tres {
-  z-index: '1000' !important;
   position: fixed !important;
   top: 20px !important;
   right: 20px !important;
@@ -34,7 +33,6 @@
   
    }
   ul#wadokutres li:nth-child(odd), ul.tres li:nth-child(odd) {
-  z-index: '1000' !important;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -44,7 +42,6 @@
   text-indent: 2px;
   }
   #wadokutres li:nth-child(1) {
-  z-index: '1000' !important;
   text-align: center;
   background-color:  #fefbf1; 
   text-indent: 0px;
