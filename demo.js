@@ -33,6 +33,7 @@ var search = function (w, callback) {
     var url = encodeURI("http://www.wadoku.eu:10010/api/v1/search?query=" + w + "&callback=" + callback);
     var head = document.getElementsByTagName("head")[0];
     var s = document.createElement("script");
+    s.type = "text/javascript";
     s.src = url;
     head.appendChild(s);
 }
