@@ -11,8 +11,7 @@ var makeWdkBox = function (){
     var ul = document.createElement("ul");
     ul.innerHTML = "Wort markieren und suchen!";
     ul.id = "wadokutres";
-    document.body.appendChild(ul);} else {
-    return;
+    document.body.appendChild(ul);
   }
 }
 
@@ -41,12 +40,13 @@ var search = function (w, callback) {
 
 var renderResult = function (results) {
   var ul = document.getElementById("wadokutres");
-  var li = document.createElement("li");
-  if(results.length == 0) {
+  if(results.entries.length == 0) {
+    var li = document.createElement("li");
     li.innerHTML = "Nichts gefunden!";
     ul.appendChild(li);
   } else {
     console.log(results);
+    ul.innerHTML = "";
     results.entries.forEach(function(entry){
       var li = document.createElement("li");
       li.innerHTML = entry.midashigo + "| " + entry.definition;
