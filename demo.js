@@ -46,9 +46,15 @@ var renderResult = function (results) {
     li.innerHTML = "Nichts gefunden!";
     ul.appendChild(li);
   } else {
-    results.entries.forEach(function(entry){
+    var reg = /\[[a-z0-9]*\]/g;
+    results.entries.sort(function(a, b){
+      var midashigoA, midashigoB;
+      midashigoA = a.midashigo.replace(reg, "").trim();
+      midashigoB = b.midashigo.replace(reg, "").trim();
+      return midashigoA.length - midashigoB.length;
+    }).forEach(function(entry){
       var li = document.createElement("li");
-      li.innerHTML = entry.midashigo + "| " + entry.definition;
+      li.innerHTML = "<a target='_blank' href='http://www.wadoku.eu/entries/by-daid/" + entry.wadoku_id + "'>" + entry.midashigo + "</a>" + "| " + entry.definition;
       ul.appendChild(li);
     });
   }
@@ -64,7 +70,11 @@ window.onload = function () {
     var selectedText = selectWdk().replace(/[\s、「」、。\(\)\[\]\t（）]/g, "");
     var reg = /[\s\d\t]/g;
     if(reg.test(selectedText) || selectedText.length > 10 || selectedText == "") {
-      return selectedText;
+      var ul = document.getElementById("wadokutres");
+      ul.innerHTML = "";
+      var li = document.createElement("li");
+      li.innerHTML = "Nichts gefunden!";
+      ul.appendChild(li);
     } else {
       search(selectedText, 'renderResult');
     };
