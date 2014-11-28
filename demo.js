@@ -40,13 +40,12 @@ var search = function (w, callback) {
 
 var renderResult = function (results) {
   var ul = document.getElementById("wadokutres");
+  ul.innerHTML = "";
   if(results.entries.length == 0) {
     var li = document.createElement("li");
     li.innerHTML = "Nichts gefunden!";
     ul.appendChild(li);
   } else {
-    console.log(results);
-    ul.innerHTML = "";
     results.entries.forEach(function(entry){
       var li = document.createElement("li");
       li.innerHTML = entry.midashigo + "| " + entry.definition;
